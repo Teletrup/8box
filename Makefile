@@ -1,0 +1,1 @@
+-lGL -lGLEW -lglfw3 -ldl -lX11 -lpthread -lm
