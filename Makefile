@@ -1,6 +1,6 @@
 .PHONY: run clean
 
-NAME = a.out
+NAME = 8box
 CC = g++
 EXT = cpp
 BINF = -lGL -lGLEW -lglfw3 -ldl -lX11 -lpthread -lm
