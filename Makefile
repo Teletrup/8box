@@ -1,8 +1,8 @@
 .PHONY: run clean
 
 NAME = a.out
-CC = gcc
-EXT = c
+CC = g++
+EXT = cpp
 BINF = -lGL -lGLEW -lglfw3 -ldl -lX11 -lpthread -lm
 OBJF = -O3
 INC = 
