@@ -1,0 +1,19 @@
+lang:
+	c:
+		y
+			It's simple
+		n
+			It's simplistic
+	c++:
+		y
+			It has classes
+		n
+		pimpl?
+		smart pointers?
+	rust:
+		y
+			more sane than c++ (why?)
+		n
+			verbose
+			slow compilation
+			bloated
