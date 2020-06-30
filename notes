@@ -1,1 +1,19 @@
+struct packing
+	rationale
+	on 64 machines bit ma
 
+= in class definitions
+
+unique pointers
+shared pointers
+templates
+	avoiding compile time slowdown
+	avoiding bloat in general
+noexcept
+constexpr
+move semantics
+
+todo:
+	*drawable derivates with custom shaders
+	multiple drawables with same prog
+		shared pointer?
