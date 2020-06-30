@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "prog.h"
+
 
 class Drawable {
 	GLuint vao, vbo, prog;
@@ -28,41 +30,15 @@ static const char* f_shd_src = ""
 "}";
 
 
-
 Drawable::Drawable() {
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
-
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	GLuint v_shd = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(v_shd, 1, &v_shd_src, 0);
-	glCompileShader(v_shd);
-	char log_v[512];
-	glGetShaderInfoLog(v_shd, 512, 0, log_v);
-	printf(log_v);
-
-	GLuint f_shd = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(f_shd, 1, &f_shd_src, 0);
-	glCompileShader(f_shd);
-	char log_f[512];
-	glGetShaderInfoLog(f_shd, 512, 0, log_f);
-	printf(log_f);
-
-	prog = glCreateProgram();
-	glAttachShader(prog, v_shd);
-	glAttachShader(prog, f_shd);
-	glLinkProgram(prog);
-	char log_p[512];
-	glGetProgramInfoLog(prog, 512, 0, log_p);
-	printf(log_p);
-
-	glDeleteShader(v_shd);
-	glDeleteShader(f_shd);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(GLfloat), 0);
 	glEnableVertexAttribArray(0);
+	prog = progGen("vert.glsl", "frag.glsl");
 }
 
 void Drawable::draw() {
