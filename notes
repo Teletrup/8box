@@ -17,3 +17,5 @@ todo:
 	*drawable derivates with custom shaders
 	multiple drawables with same prog
 		shared pointer?
+
+single buffer for all lines?
