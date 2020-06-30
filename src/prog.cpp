@@ -28,7 +28,6 @@ void shdLoad(const char* name, GLuint prog, GLenum type) {
 }
 
 GLuint progGen(const char* v_name, const char* f_name, const char* g_name, const char* c_name) {
-	GLuint v_shd, f_shd, g_shd, c_shd;
 	GLuint prog = glCreateProgram();
 	if (v_name) {
 		printf("compiling vertex shader\n");
