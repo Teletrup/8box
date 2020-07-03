@@ -4,7 +4,7 @@ NAME = 8box
 CC = g++
 EXT = cpp
 BINF = -lGL -lGLEW -lglfw3 -ldl -lX11 -lpthread -lm
-OBJF = -Wall -O3
+OBJF = -std=c++20 -Wall -O3
 INC = 
 
 SRC = $(wildcard src/*.$(EXT))
