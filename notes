@@ -1,64 +1,48 @@
+takeaways
+	? Before starting a project think about it's limitations
+
 struct packing
 	rationale
 	on 64 machines bit ma
 
-= in class definitions
+c++ shenanigans:
+	= in class definitions
+	unique pointers
+	shared pointers
+	templates
+		avoiding compile time slowdown
+		avoiding bloat in general
+	noexcept
+	constexpr
+	move semantics
 
-unique pointers
-shared pointers
-templates
-	avoiding compile time slowdown
-	avoiding bloat in general
-noexcept
-constexpr
-move semantics
+what can be done
+	8box
+	wavy shit
+	rendering to texture
+	tower
 
 todo:
-	*drawable derivates with custom shaders
-	multiple drawables with same prog
-		approach 1:
-			spec:
-				derived module vars:
-					sg_prog
-					sg_count
-				derived class vars:
-					m_prog
-				derived constructor:
-					if count == 0:
-						sg_prog = progGen(...)
-					m_prog = sg_prog
-					count ++
-				derived destructor:
-					if count == 0:
-						progdel
-					count --
-			pros:
-				simple af
-				no templates
-				no virtuals
-				redundancies are negligable 
-				m_prog is really smaller than vtable ptr
-			cons:
-				redundant conditional in constructor
-				redundant member m_prog
-			quirks:
-				not quite oo
-		approach 2:
-			as above, but:
-				spec:
-					static inline vars instead module vars
-				pros:
-					no outside class shenanigans 
-				cons:
-					still messy
-		approach 3:
-			virtual static variable
-				pros:
-					better than all of the above
-				cons:
-					impossible in c++ because reasons
-	
-
-
-
+	drawables:
+		txmap
+			where does the texture live?
+				inside
+					spec:
+					pros:
+					cons:
+				outside
+					spec:
+					pros:
+					cons:
+				either of the above
+					spec:
+					pros:
+					cons:
+		lnmap
+		text
+			glText?
+	drawing to a texture
+		framebuffer wrapper?
+			naaah
+		
 single buffer for all lines?

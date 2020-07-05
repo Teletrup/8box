@@ -11,7 +11,7 @@ class Drawable {
 	GLenum m_primitive;
 	public:
 	Drawable();
-	~Drawable() {}
+	~Drawable();
 	void draw();
 };
 
