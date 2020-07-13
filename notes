@@ -1,10 +1,6 @@
 takeaways
 	? Before starting a project think about it's limitations
 
-struct packing
-	rationale
-	on 64 machines bit ma
-
 c++ shenanigans:
 	= in class definitions
 	unique pointers
@@ -17,12 +13,29 @@ c++ shenanigans:
 	move semantics
 
 what can be done
+	universal wrapper
+		what does it mean:
+			any cool application I can think of
+		can suck:
+			
 	8box
 	wavy shit
 	rendering to texture
+		rendering procedure callback?
+			which class?
+				txmap
+					nah:
+						needs framebuffer object
+				?renderer?
+					nah:
+						must somehow access texture
+
+		problem of framebuffer state
+			python-like with
 	tower
 
 todo:
+	write comprehensive descriptions of classes
 	drawables:
 		txmap
 			where does the texture live?
@@ -37,8 +50,11 @@ todo:
 				either of the above
 					spec:
 					pros:
+						more flexible?
 					cons:
+						clusterfuck
 		lnmap
+			can it be efficiently done with instancing?
 		text
 			glText?
 	drawing to a texture
@@ -46,3 +62,9 @@ todo:
 			naaah
 		
 single buffer for all lines?
+	pros:
+		arguably a lot faster with multiple drawables
+	cons:
+		harder to implement
+		data structure can't inherit from drawable
+	How much overhead is calling gl
